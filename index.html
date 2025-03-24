@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web and Mobile PDD</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Yellowtail&display=swap');
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background-color: #f4f4f4;
+        -webkit-font-smoothing: antialiased;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        -webkit-overflow-scrolling: touch;
+
+        font-family: 'Ubuntu', sans-serif, Arial, sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        font-style: normal;
+      }
+
+      img {
+        border: 0;
+        line-height: 100%;
+        text-decoration: none;
+        -ms-interpolation-mode: bicubic;
+        background-color: white;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      table {
+        border-spacing: 0;
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+      }
+
+      table td {
+        border-collapse: collapse;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        border-radius: 8px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-spacing: 0;
+        border: 1px solid #d9d9d9;
+      }
+
+      .signature-font {
+        font-family: 'Yellowtail', cursive, Arial, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      .bold {
+        font-weight: bold;
+      }
+
+      .right-align {
+        text-align: right;
+      }
+
+      .center-align {
+        text-align: center;
+      }
+
+      .hero img {
+        width: 100%;
+        height: auto;
+        display: block;
+        -ms-interpolation-mode: bicubic;
+      }
+
+      .content {
+        padding: 64px;
+        text-align: left;
+        -webkit-text-size-adjust: none;
+      }
+
+      .content h1 {
+        color: #2d3142;
+        font-size: 24px;
+        margin-bottom: 10px;
+        font-weight: bold;
+        line-height: 1.4;
+      }
+
+      .content p {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 10px;
+        color: #333333;
+      }
+
+      .button-content {
+        margin-top: 32px;
+      }
+      .dashed-container {
+        padding: 0 32px;
+      }
+      .dashed-line {
+        width: 100%;
+        margin: 20px 0;
+        border: none;
+        height: 2px;
+        background: repeating-linear-gradient(
+          to right,
+          #d9d9d9 0,
+          #d9d9d9 8px,
+          transparent 8px,
+          transparent 12px
+        );
+      }
+
+      .button-content .button {
+        display: inline-block;
+        width: auto;
+        min-width: 150px;
+        padding: 10px 20px;
+        background-color: #f15a22;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .features {
+        text-align: center;
+        margin: 30px 0;
+      }
+      .features h1 {
+        color: #2d3142;
+        font-size: 24px;
+        margin-bottom: 20px;
+        font-weight: regular;
+        line-height: 1.4;
+      }
+
+      .features p {
+        font-size: 14px;
+        line-height: 1.4;
+        color: #333333;
+      }
+
+      .content-table {
+        width: 100%;
+        border-spacing: 0;
+        table-layout: auto;
+        padding: 0 64px;
+      }
+
+      .content-row {
+        height: 110px;
+        vertical-align: top;
+      }
+
+      .content-row h2 {
+        margin: 0;
+        font-size: 14px;
+      }
+
+      .content-row p {
+        margin: 0;
+        margin: 8px 0;
+      }
+
+      .content-left,
+      .content-right {
+        width: 45%;
+        padding: 10px 0;
+      }
+
+      .content-left {
+        text-align: right;
+      }
+
+      .content-right {
+        text-align: left;
+      }
+
+      .icon-cell {
+        padding: 10px;
+        width: 10%;
+        text-align: center;
+        position: relative;
+      }
+
+      .icon-cell img {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto;
+        border-radius: 50%;
+      }
+
+      .vertical-line {
+        position: absolute;
+        top: 70px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 100%;
+        background: repeating-linear-gradient(
+          to bottom,
+          #d9d9d9 0,
+          #d9d9d9 8px,
+          transparent 8px,
+          transparent 12px
+        );
+      }
+
+      .last-row .vertical-line {
+        display: none;
+      }
+
+      .program-highlights {
+        margin-top: 32px;
+        margin-bottom: 32px;
+        padding: 0 64px;
+      }
+
+      .program-highlight-item {
+        margin-bottom: 20px;
+        overflow: hidden;
+      }
+
+      .program-highlights .icon {
+        float: left;
+        width: 30px;
+        height: 30px;
+        margin-right: 15px;
+      }
+
+      .program-highlights img.icon {
+        border-radius: 50%;
+      }
+
+      .program-highlights .text {
+        overflow: hidden;
+      }
+
+      .program-highlights .text h2 {
+        margin: 0;
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      .program-highlights .text p {
+        margin: 5px 0 0 0;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .actions-card {
+        padding: 16px;
+        background-color: #e0e0e0;
+        text-align: center;
+      }
+
+      .actions-card p {
+        font-weight: bold;
+      }
+
+      .actions-table {
+        width: 100%;
+        border-spacing: 0;
+      }
+
+      .actions-table td {
+        vertical-align: middle;
+        padding: 0 20px;
+      }
+
+      .actions-table td p {
+        margin: 0;
+        padding: 16px 0;
+      }
+
+      .actions-table .left-column {
+        text-align: left;
+      }
+
+      .actions-table .right-column {
+        text-align: right;
+      }
+
+      .actions-card .button {
+        width: fit-content;
+        min-width: 160px;
+        text-align: center;
+        display: block;
+        padding: 10px 16px;
+        font-size: 14px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #ffffff;
+        background-color: #f15a22;
+        border-radius: 4px;
+        margin-left: auto;
+      }
+
+      .actions-card .button-outline {
+        margin-left: unset;
+        color: #f15a22;
+        background-color: #ffffff;
+        border: 2px solid #f15a22;
+      }
+
+      .footer {
+        padding: 0 32px;
+      }
+      .footer .links-wrapper {
+        width: 100%;
+      }
+      .footer .links span {
+        font-weight: bold;
+        display: inline-block;
+      }
+
+      .footer .links a {
+        font-weight: regular;
+        color: #f15a22;
+      }
+
+      .footer-table {
+        width: 100%;
+        border-spacing: 0;
+        text-align: left;
+      }
+
+      .footer-table td {
+        vertical-align: top;
+        padding: 10px 0;
+      }
+
+      .footer-left-wrapper .image-wrapper {
+        float: left;
+      }
+
+      .footer-left-wrapper .image-wrapper img {
+        width: 100px;
+        border-radius: 50%;
+      }
+
+      .footer-left-wrapper .footer-info-wrapper {
+        padding: 8px 16px;
+        float: left;
+        height: 100px;
+      }
+
+      .footer-left-wrapper::after {
+        content: '';
+        display: table;
+        clear: both;
+      }
+      
+      .footer-address-info .title {
+        margin-bottom: 8px;
+        display: block;
+      }
+
+      .footer-social-icons {
+        margin-top: 24px;
+      }
+
+      .footer-title {
+        font-size: 16px;
+        font-weight: bold;
+        margin: 0 0 10px;
+      }
+
+      .footer-social-icons img {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+        border-radius: 20%;
+      }
+
+      .footer-address-info {
+        padding: 16px 0;
+      }
+
+      .credits {
+        font-weight: lighter;
+        font-size: 12px;
+        text-align: center;
+        margin-bottom: 16px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <table role="presentation" class="container">
+      <tr>
+        <td>
+          <!-- hero Section -->
+          <div class="hero">
+            <img
+              src="https://wmddmail.s3.us-west-2.amazonaws.com/png/Hero_Img.png"
+              alt="Langara College"
+            />
+          </div>
+
+          <!-- Content Section -->
+          <div class="content">
+            <p>
+              <span class="bold">Dear Aspirant,</span><br />
+              Our Post-Degree Program in Web and Mobile App Design and
+              Development is designed just for you! Whether you want to change
+              careers, enhance your skills, or build on your undergraduate
+              education, this program is perfect!
+            </p>
+
+            <p class="right-align signature-font bold">
+              Jason Madar, Program Coordinator
+            </p>
+            <p class="center-align button-content">
+              <a
+                href="https://langara.ca/admissions/apply-to-langara/index.html"
+                class="button"
+                >Apply Now</a
+              >
+            </p>
+           
+          </div>
+
+          <div class="dashed-container">
+            <hr class="dashed-line" />
+          </div>
+
+          <!-- Features Section -->
+          <div class="features">
+            <h1>Why Choose Our Program?</h1>
+
+            <table class="content-table">
+              <!-- First Row (Content on the left, Icon in the middle, Empty on the right) -->
+              <tr class="content-row">
+                <td class="content-left">
+                  <h2>Career Advancement</h2>
+                  <p>
+                    Gain the latest skills and hands-on experience with
+                    real-world projects guided by industry experts.
+                  </p>
+                </td>
+                <td class="icon-cell">
+                  <img
+                    src="https://wmddmail.s3.us-west-2.amazonaws.com/png/Career.png"
+                    alt="Career Advancement"
+                  />
+                  <div class="vertical-line"></div>
+                </td>
+                <td class="content-right"></td>
+              </tr>
+
+              <!-- Second Row (Empty on the left, Icon in the middle, Content on the right) -->
+              <tr class="content-row">
+                <td class="content-left"></td>
+                <td class="icon-cell">
+                  <img
+                    src="https://wmddmail.s3.us-west-2.amazonaws.com/png/Skill.png"
+                    alt="Skill Enhancement"
+                  />
+                  <div class="vertical-line"></div>
+                </td>
+                <td class="content-right">
+                  <h2>Skill Enhancement</h2>
+                  <p>Master the latest technologies, including AI.</p>
+                </td>
+              </tr>
+
+              <!-- Third Row (Content on the left, Icon in the middle, Empty on the right) -->
+              <tr class="content-row">
+                <td class="content-left">
+                  <h2>Build on Your Degree</h2>
+                  <p>Open new career opportunities in tech.</p>
+                </td>
+                <td class="icon-cell">
+                  <img
+                    src="https://wmddmail.s3.us-west-2.amazonaws.com/png/Build.png"
+                    alt="Build on Your Degree"
+                  />
+                  <div class="vertical-line"></div>
+                </td>
+                <td class="content-right"></td>
+              </tr>
+              <!-- Fourth Row (Content on the right, Icon in the middle, Empty on the left) -->
+              <tr class="content-row last-row">
+                <td class="content-left"></td>
+                <td class="icon-cell">
+                  <img
+                    src="https://wmddmail.s3.us-west-2.amazonaws.com/png/Open.png"
+                    alt="Open to All"
+                  />
+                  <div class="vertical-line"></div>
+                </td>
+                <td class="content-right">
+                  <h2>Open to All</h2>
+                  <p>
+                    Applicants from any undergraduate background are welcome.
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </div>
+
+          <!-- hero section -->
+          <div class="hero">
+            <img
+              src="https://wmddmail.s3.us-west-2.amazonaws.com/png/Des_Dev.png"
+              alt="Langara College"
+            />
+          </div>
+
+          <!-- program highlight -->
+
+          <div class="program-highlights">
+            <div class="program-highlight-item">
+              <img
+                src="https://wmddmail.s3.us-west-2.amazonaws.com/png/social_media_logo_2x/Circle.png"
+                class="icon"
+              />
+              <div class="text">
+                <h2>Small Class Sizes</h2>
+                <p>
+                  Personalized attention with classes limited to 32 students.
+                </p>
+              </div>
+            </div>
+
+            <div class="program-highlight-item">
+              <img
+                src="https://wmddmail.s3.us-west-2.amazonaws.com/png/social_media_logo_2x/Circle.png"
+                class="icon"
+              />
+              <div class="text">
+                <h2>Experienced Instructors</h2>
+                <p>Learn from industry professionals.</p>
+              </div>
+            </div>
+
+            <div class="program-highlight-item">
+              <img
+                src="https://wmddmail.s3.us-west-2.amazonaws.com/png/social_media_logo_2x/Circle.png"
+                class="icon"
+              />
+              <div class="text">
+                <h2>Flexible Learning Options</h2>
+                <p>
+                  Full-time, part-time, online, and Saturday classes available.
+                </p>
+              </div>
+            </div>
+
+            <div class="program-highlight-item">
+              <img
+                src="https://wmddmail.s3.us-west-2.amazonaws.com/png/social_media_logo_2x/Circle.png"
+                class="icon"
+              />
+              <div class="text">
+                <h2>Real-World Industry Collaboration</h2>
+                <p>
+                  Work on projects that emulate the professional environment.
+                </p>
+              </div>
+            </div>
+
+            <div class="program-highlight-item">
+              <img
+                src="https://wmddmail.s3.us-west-2.amazonaws.com/png/social_media_logo_2x/Circle.png"
+                class="icon"
+              />
+              <div class="text">
+                <h2>Langara Tradition</h2>
+                <p>Join a community that values excellence and innovation.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- actions cards -->
+
+          <div class="actions-card">
+            <table class="actions-table">
+              <tr>
+                <td class="left-column">
+                  <p>
+                    Do you want to learn more about our program? Visit Virtual
+                    Info Session.
+                  </p>
+                  <a
+                    href="https://langara-app.ca/news-and-events"
+                    class="button button-outline"
+                    >Register</a
+                  >
+                </td>
+                <td class="right-column">
+                  <p>
+                    Ready to Transform Your Career? Secure your spot for our
+                    next intake.
+                  </p>
+                  <a
+                    href="https://langara.ca/admissions/apply-to-langara/index.html"
+                    class="button"
+                    >Apply Now</a
+                  >
+                </td>
+              </tr>
+            </table>
+          </div>
+
+          <!-- Footer Section -->
+          <div class="footer">
+            <div class="links-wrapper">
+              <p>
+                For more information, visit our program website or contact our
+                admissions office:
+              </p>
+              <p class="links">
+                <span
+                  >Website:
+                  <a href="https://langara-app.ca"
+                    >https://langara-app.ca</a
+                  ></span
+                >
+                <span
+                  >International students:
+                  <a href="mailto:langaraglobal@langara.ca"
+                    >langaraglobal@langara.ca</a
+                  ></span
+                >
+                <span
+                  >Domestic students:
+                  <a href="mailto:recruitment@langara.ca"
+                    >recruitment@langara.ca</a
+                  ></span
+                >
+              </p>
+            </div>
+
+            <table class="footer-table">
+              <tr>
+                <!-- Left Side (Logo and Text) -->
+                <td class="footer-left-wrapper">
+                  <div class="image-wrapper">
+                    <a href="https://langara.ca/">
+                      <img
+                        src="https://wmddmail.s3.us-west-2.amazonaws.com/png/social_media_logo_2x/WMDD%20Logo_2x.png"
+                        alt="Logo"
+                        class="footer-logo"
+                      />
+                    </a>
+                  </div>
+                  <div class="footer-info-wrapper">
+                    <div class="footer-title">
+                      Web and Mobile App <br />
+                      Design and Development
+                    </div>
+                    <div class="footer-social-icons">
+                      <a href="https://www.linkedin.com/company/wmddlangara"
+                        ><img
+                          src="https://wmddmail.s3.us-west-2.amazonaws.com/png/social_media_logo_1x/LinkedIn.png"
+                          alt="LinkedIn"
+                      /></a>
+                      <a href="https://www.facebook.com/wmddlangara/"
+                        ><img
+                          src="https://wmddmail.s3.us-west-2.amazonaws.com/png/social_media_logo_1x/FB.png"
+                          alt="Facebook"
+                      /></a>
+                      <a href="https://www.instagram.com/wmdd.langara/"
+                        ><img
+                          src="https://wmddmail.s3.us-west-2.amazonaws.com/png/social_media_logo_1x/Instagram.png"
+                          alt="Instagram"
+                      /></a>
+                      <a href="https://www.youtube.com/@WMDDLangara"
+                        ><img
+                          src="https://wmddmail.s3.us-west-2.amazonaws.com/png/social_media_logo_1x/Youtube.png"
+                          alt="YouTube"
+                      /></a>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <div class="footer-address-info">
+              <span class="title"><strong>Langara College</strong></span>
+              100 West 49th Avenue Vancouver B.C. Canada V5Y 2Z6
+            </div>
+          </div>
+          <div class="dashed-container">
+            <hr class="dashed-line" />
+          </div>
+          <div class="credits">
+            © 2024 Web & Mobile App Design & Development, Langara College
+          </div>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
